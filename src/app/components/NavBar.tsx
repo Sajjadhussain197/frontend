@@ -25,20 +25,20 @@ const NavBar = () => {
         <nav>
             <div className="relative msm:h-60 h-20 text-black bg-white w-full flex msm:flex-col flex-row items-center  msm:mx-auto px-4 msm:px-6">
                 <div className="msm:w-[78%] w-full flex msm:flex-col flex-row items-center justify-between ">
-                    <div className="msm:w-full w-1/3 msm:h-30 h-20 flex justify-between items-center py-2 px-2">
+                    <div className="msm:w-full  w-1/2 msm:h-30 h-20 flex justify-between items-center py-2 px-2">
                         <Image src="/crown.svg" alt="My Icon" width={60} height={60}
                             className='rounded-full bg-black' />
-                        <div className="hidden msm:flex justify-between w-2/3">
+                        <div className="hidden msm:flex msm:justify-between  msm:w-2/3">
                             <span className='text-lg font-bold'>+92 313 123456 666 ( UAN ) +92 51 123456 111 ( UAN )</span>
                             <span className='text-lg font-bold'>virtualsoft@gmail.com info@virtualsoft.com</span>
                         </div>
                     </div>
 
                     {/* <hr className='h-1 bg-gray-400 hidden msm:block' /> */}
-                    <div className='bg-gray-200 h-0.5 w-full'></div>
+                    <div className='bg-gray-200 h-0.5 hidden w-full msm:block '></div>
 
 
-                    <div className="w-full  msm:h-30 h-20 flex flex-col msm:flex-row justify-between px-24 py-1 items-center">
+                    <div className="msm:w-full w-2/3  msm:h-30 h-20 flex flex-col msm:flex-row justify-between px-24 py-1 items-center">
                         <ul className='hidden msm:flex text-black cursor-pointer font-bold text-sm gap-10'>
                             <li>Home</li>
                             <li className='flex gap-1 items-center' onClick={() => setIsOpen(!isOpen)}>
