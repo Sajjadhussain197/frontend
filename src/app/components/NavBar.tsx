@@ -23,7 +23,7 @@ const NavBar = () => {
     return (
 
         <nav>
-            <div className="relative msm:h-60 h-20 text-black bg-white w-full flex msm:flex-col flex-row items-center  msm:mx-auto px-4 msm:px-6">
+            <div className="relative msm:h-40 h-20 text-black bg-white w-full flex msm:flex-col flex-row items-center  msm:mx-auto px-4 msm:px-6">
                 <div className="msm:w-[78%] w-full flex msm:flex-col flex-row items-center justify-between ">
                     <div className="msm:w-full  w-1/2 msm:h-30 h-20 flex justify-between items-center py-2 px-2">
                         <Image src="/crown.svg" alt="My Icon" width={60} height={60}
