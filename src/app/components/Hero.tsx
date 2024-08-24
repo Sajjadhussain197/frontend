@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Hero = () => {
-    const images = ['/slid1.jpeg', '/slid1.jpeg', '/slid1.jpeg'];
+    const images = ['/slid1.jpeg', '/slide2.jpeg', '/slid1.jpeg'];
     const [currentImage, setCurrentImage] = useState(0);
     const [showText, setShowText] = useState([false, false, false]);
 
@@ -26,7 +26,7 @@ const Hero = () => {
 
     return (
         <section className="text-gray-600 body-font">
-            <div className="flex px-2 h-[500px] flex-col items-center msm:w-full">
+            <div className="flex px-2 h-[700px] flex-col items-center msm:w-full">
                 <div className="relative w-full h-full">
                     {images.map((image, index) => (
                         <img
@@ -39,17 +39,18 @@ const Hero = () => {
                         />
                     ))}
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-80"></div>
+                    <div className="absolute  inset-0  bg-gradient-to-b from-transparent to-white opacity-300"></div>
 
-                    <div className="absolute inset-0 flex flex-col justify-center left-32 items-start text-white">
-                        <h1 className={`text-4xl transition-opacity duration-2000 ${showText[0] ? 'opacity-100' : 'opacity-0'}`}>
-                            Line 1
+                    <div className="absolute inset-0 flex flex-col justify-center left-60 items-start text-black">
+                        <h1 className={`text-4xl translate translate-y-0  duration-3000 font-bold duration-3000 ${showText[0] ? 'opacity-100' : 'opacity-0'}`}>
+                           Lorem ipsum dolor
+                            
                         </h1>
                         <h2 className={`text-2xl transition-opacity duration-2000 ${showText[1] ? 'opacity-100' : 'opacity-0'}`}>
-                            Line 2
+                        sit amet consectetur adipisicing elit. Libero molestias quod,
                         </h2>
                         <h3 className={`text-xl transition-opacity duration-2000 ${showText[2] ? 'opacity-100' : 'opacity-0'}`}>
-                            Line 3
+                        a, ducimus laudantium minima voluptatum eum, provident perspiciatis non modi aspernatur molestiae
                         </h3>
                     </div>
                 </div>
