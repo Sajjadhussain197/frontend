@@ -12,25 +12,22 @@ const config: Config = {
         'msm':'765px'
 
       },
-       animation: {
-        slideRight: 'slideRight 50s linear infinite',
-        slideLeft: 'slideLeft 50s linear infinite',
-      },
       keyframes: {
-        slideRight: {
-          '0%': { transform: 'translateX(100%)' },
+        slideLeft: {
+          '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
-        slideLeft: {
-          '0%': { transform: 'translateX(-100%)' },
+        slideRight: {
+          '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(100%)' },
         },
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      animation: {
+        'slide-left': 'slideLeft 60s linear infinite',
+        'slide-right': 'slideRight 60s linear infinite',
       },
+      
+       
     },
   },
   plugins: [],

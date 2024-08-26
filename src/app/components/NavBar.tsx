@@ -63,7 +63,7 @@ const NavBar = () => {
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg>
                             </div>
-                            <button className='bg-black h-11 w-40 px-10 py-2 text-yellow-500 text-lg font-semibold rounded-lg'>
+                            <button className='bg-black h-11 w-40 px-10 py-2 text-yellow-400 text-lg font-semibold rounded-lg'>
                                 Track
                             </button>
                         </div>

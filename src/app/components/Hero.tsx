@@ -33,7 +33,7 @@ const Hero = () => {
                             key={index}
                             src={image}
                             alt={`slide-${index}`}
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-5000 ${
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-7000 ${
                                 currentImage === index ? 'opacity-100' : 'opacity-0'
                             }`}
                         />
@@ -41,7 +41,7 @@ const Hero = () => {
                     {/* Gradient Overlay */}
                     <div className="absolute  inset-0  bg-gradient-to-b from-transparent to-white opacity-300"></div>
 
-                    <div className="absolute inset-0 flex flex-col justify-center left-60 items-start text-black">
+                    <div className="absolute inset-0 flex flex-col justify-center left-60 top-0 items-start text-black">
                         <h1 className={`text-4xl translate translate-y-0  duration-3000 font-bold duration-3000 ${showText[0] ? 'opacity-100' : 'opacity-0'}`}>
                            Lorem ipsum dolor
                             
