@@ -51,7 +51,7 @@ const SlidingCards = () => {
             scrollDirection === 'down' ? 'animate-slide-left' : 'animate-slide-right'
           }`}
         >  {[...pics, ...pics].map((item, i) => (
-          <Card key={i} imgSrc={item.src} title={item.title} />
+          <Card key={i} imgSrc={item.src}  />
         ))}
         </div>
       </div>
@@ -65,7 +65,7 @@ const SlidingCards = () => {
           }`}
         >
           {[...pics, ...pics].map((item, i) => (
-            <Card key={i} imgSrc={item.src} title={item.title} />
+            <Card key={i} imgSrc={item.src}  />
           ))}
         </div>
       </div>
@@ -79,19 +79,17 @@ interface CardProps {
 }
 
 // Card component for rendering each card
-const Card: React.FC<CardProps> = ({ imgSrc, title }) => {
+const Card: React.FC<CardProps> = ({ imgSrc }) => {
   return (
     <div className="flex flex-col min-h-24 min-w-24 bg-white justify-center items-center rounded-xl border bottom-0.5 border-yellow-300 md:min-h-32 md:min-w-32">
       <Image
         src={imgSrc}
-        alt={title}
+        alt={"img"}
         width={64}
         height={64}
         className="h-12 w-12 md:h-16 md:w-16"
       />
-      <span className="font-semibold text-[12px] md:text-[16px] font-myfont">
-        {title}
-      </span>
+      
     </div>
   );
 };
