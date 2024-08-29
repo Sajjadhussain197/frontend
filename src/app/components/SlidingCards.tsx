@@ -42,7 +42,7 @@ const SlidingCards = () => {
   }, []);
 
   return (
-    <div id="companies-line-group" className="flex flex-col  gap-4 font-myfont">
+    <div id="companies-line-group" className="flex flex-col max-w-7xl mx-auto  gap-4 font-myfont">
       {/* Line 1 */}
       <div className="overflow-x-hidden">
         <div
