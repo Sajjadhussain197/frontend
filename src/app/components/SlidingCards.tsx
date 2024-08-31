@@ -75,7 +75,6 @@ const SlidingCards = () => {
 
 interface CardProps {
   imgSrc: string;
-  title: string;
 }
 
 // Card component for rendering each card
