@@ -3,7 +3,11 @@ import { HoverEffect } from './ui/CardHoverEffect'
 
 export function HoverGrid() {
   return (
-    <div className="w-[80%] mx-auto px-8">
+    <div className="msm:w-[80%] w-full p-4 msm:mx-auto msm:max-w-7xl msm:px-8 flex flex-col gap-10 bg-black">
+    <div>
+    <span className='text-lg msm:text-2xl font-bold text-white '>Our Services</span>
+    <hr className='h-1 w-14 bg-yellow-500 text-yellow-400' />
+    </div>
       <HoverEffect items={projects} />
     </div>
   );
@@ -12,7 +16,7 @@ export const projects = [
   {
     title: "Stripe",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "A technology company that builds economic infrastructure for the internet.A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
     link: "https://abc.com",
   },
   {

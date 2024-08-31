@@ -66,7 +66,8 @@ const NavBar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
-                                <div className={`${isService ? 'block' : 'hidden'} flex absolute  top-8 -left-60 gap-x-80 min-w-full bg-white py-4 px-2 z-[50] h-[300px]  rounded-lg `}
+                                <div className={`${isService ? 'block' : 'hidden'} flex flex-col msm:flex-row absolute  top-8 msm:-left-60 msm:gap-x-80 min-w-screen min-h-full
+                                 msm:min-w-full bg-white py-4 px-2 z-[50] msm:h-[300px]  rounded-lg `}
                                 >
                                     <div >
                                         <h1>heading</h1>

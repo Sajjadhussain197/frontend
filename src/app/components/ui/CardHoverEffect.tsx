@@ -1,8 +1,8 @@
 "use client"
 import { cn } from "@/app/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const HoverEffect = ({
   items,
@@ -17,45 +17,89 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const getRowItems = (rowIndex: number) => {
+    const startIndex = rowIndex * 3;
+    return items.slice(startIndex, startIndex + 3);
+  };
+
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
-        className
-      )}
-    >
-      {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-gradient-to-r from-yellow-300 to-yellow-500  block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
-        </Link>
+    <div className={cn("space-y-8", className)}>
+      {[0, 1, 2].map((rowIndex) => (
+        <AnimatedRow key={rowIndex}>
+          <div className="grid grid-cols-1 msm:grid-cols-3 gap-4">
+            {getRowItems(rowIndex).map((item, idx) => (
+              <Link
+                href={item?.link}
+                key={item?.link}
+                className="relative group block p-2 h-full w-full"
+                onMouseEnter={() => setHoveredIndex(rowIndex * 3 + idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <AnimatePresence>
+                  {hoveredIndex === rowIndex * 3 + idx && (
+                    <motion.span
+                      className="absolute inset-0 h-full w-full bg-gradient-to-r from-yellow-300 to-yellow-500 block rounded-3xl"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.15 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.15, delay: 0.2 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
+                <Card>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </AnimatedRow>
       ))}
     </div>
+  );
+};
+
+const AnimatedRow = ({ children }: { children: React.ReactNode }) => {
+  const controls = useAnimation();
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } });
+        } else {
+          controls.start({ opacity: 0, x: -50, transition: { duration: 0.5, ease: "easeIn" } });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (rowRef.current) {
+      observer.observe(rowRef.current);
+    }
+
+    return () => {
+      if (rowRef.current) {
+        observer.unobserve(rowRef.current);
+      }
+    };
+  }, [controls]);
+
+  return (
+    <motion.div
+      ref={rowRef}
+      initial={{ opacity: 0, x: -50 }}
+      animate={controls}
+    >
+      {children}
+    </motion.div>
   );
 };
 
@@ -75,12 +119,13 @@ export const Card = ({
       )}
     >
       <div className="relative z-50">
-        <div className="p-4">{children}</div>
+        <div className="p-2">{children}</div>
       </div>
     </div>
    </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -94,6 +139,7 @@ export const CardTitle = ({
     </h4>
   );
 };
+
 export const CardDescription = ({
   className,
   children,
