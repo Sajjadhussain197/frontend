@@ -16,14 +16,35 @@ const cards = [
     id: 2,
     title: "VIETNAM VISA",
     content: "Vietnam, located in Southeast Asia, is bordered by China to the north, Laos to t...",
-    image: "/cardpic.jpeg",
+    image: "/slid1.jpeg",
     flag: "/luxembourg.jpeg"
   },
   {
     id: 3,
     title: "INDONESIA VISA",
     content: "Indonesia is a vast archipelago nation located in Southeast Asia, comprised of t...",
+    image: "/slide2.jpeg",
+    flag: "/luxembourg.jpeg"
+  },
+  {
+    id: 4,
+    title: "MALAYSIA VISA",
+    content: "Malaysia is a vibrant and diverse country located in Southeast Asia, known for...",
     image: "/cardpic.jpeg",
+    flag: "/luxembourg.jpeg"
+  },
+  {
+    id: 5,
+    title: "VIETNAM VISA",
+    content: "Vietnam, located in Southeast Asia, is bordered by China to the north, Laos to t...",
+    image: "/slid1.jpeg",
+    flag: "/luxembourg.jpeg"
+  },
+  {
+    id: 6,
+    title: "INDONESIA VISA",
+    content: "Indonesia is a vast archipelago nation located in Southeast Asia, comprised of t...",
+    image: "/slide2.jpeg",
     flag: "/luxembourg.jpeg"
   },
 ]
