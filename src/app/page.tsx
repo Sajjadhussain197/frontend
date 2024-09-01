@@ -2,10 +2,9 @@ import Image from "next/image";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import SlidingCards from "./components/SlidingCards";
-import { HoverEffect } from "./components/ui/CardHoverEffect";
-import { HoverGrid } from "./components/HoverGrid";
 import ApplicationCenters from "./components/ApplicationCenters";
 import Footer from "./components/Footer";
+import { CanvasBackground } from "./components/CanvasBackground";
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
           <Hero/>
           <SlidingCards />
           <ApplicationCenters/>
-          <HoverGrid />
+          <CanvasBackground/>
           <Footer/>
         </main>
   );

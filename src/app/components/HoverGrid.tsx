@@ -3,7 +3,7 @@ import { HoverEffect } from './ui/CardHoverEffect'
 
 export function HoverGrid() {
   return (
-    <div className="msm:w-[80%] w-full p-4 msm:mx-auto msm:max-w-7xl msm:px-8 flex flex-col gap-10 bg-black">
+    <div className=" w-full p-4 msm:mx-auto msm:max-w-7xl flex flex-col gap-2 ">
     <div>
     <span className='text-lg msm:text-2xl font-bold text-white '>Our Services</span>
     <hr className='h-1 w-14 bg-yellow-500 text-yellow-400' />

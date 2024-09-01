@@ -40,6 +40,9 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			'gradient-purple': '#6a0dad',
+        'gradient-pink': '#ff69b4',
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
